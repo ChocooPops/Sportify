@@ -29,7 +29,7 @@ succes.addEventListener("click", function(){
 }); 
 succes.addEventListener("mouseover", function(){
     document.getElementById("circleSucces").style.backgroundColor = "#40A798";
-    document.getElementById("trophée").src = "../../../images/succès/trophée2.png"; 
+    document.getElementById("trophée").src = "../../../images/succes/trophée2.png"; 
     stop(); 
     if(!fixed){
         visible = true;    
@@ -40,7 +40,7 @@ succes.addEventListener("mouseover", function(){
 }); 
 succes.addEventListener("mouseout", function(){
     document.getElementById("circleSucces").style.backgroundColor = "#000";
-    document.getElementById("trophée").src = "../../../images/succès/trophée.png"; 
+    document.getElementById("trophée").src = "../../../images/succes/trophée.png"; 
     stop(); 
     if(!fixed){
         visible = false; 

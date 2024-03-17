@@ -142,6 +142,38 @@ INSERT INTO `ITEMS` (`ITEM_ID`, `NOM_ITEM`, `TYPE`, `DESCRIPTION`, `PRIX`, `COUL
 (26, 'Real Madrid', 'Ecusson', '14 UCL Winners', 500, 'Blanc'),
 (27, 'Barcelone', 'Ecusson', 'Nothing Winners', 500, 'Bleu');
 
+INSERT INTO `ITEMS` (`ITEM_ID`, `NOM_ITEM`, `TYPE`, `DESCRIPTION`, `PRIX`, `COULEUR`) VALUES
+(31, 'Succes', 'Badge', 'null', 0, 'null'),  
+(32, 'Succes', 'Badge', 'null', 0, 'null'),  
+(33, 'Succes', 'Badge', 'null', 0, 'null'),  
+(34, 'Succes', 'Badge', 'null', 0, 'null'),  
+(35, 'Succes', 'Badge', 'null', 0, 'null'),  
+(36, 'Succes', 'Badge', 'null', 0, 'null'),  
+(37, 'Succes', 'Badge', 'null', 0, 'null'),  
+(38, 'Succes', 'Badge', 'null', 0, 'null'),  
+(39, 'Succes', 'Badge', 'null', 0, 'null'),  
+(40, 'Succes', 'Badge', 'null', 0, 'null'),  
+(41, 'Succes', 'Badge', 'null', 0, 'null'),  
+(42, 'Succes', 'Badge', 'null', 0, 'null'),  
+(43, 'Succes', 'Badge', 'null', 0, 'null'),    
+(44, 'Succes', 'Badge', 'null', 0, 'null'),  
+(45, 'Succes', 'Badge', 'null', 0, 'null'),  
+(46, 'Succes', 'Badge', 'null', 0, 'null'),  
+(47, 'Succes', 'Badge', 'null', 0, 'null'), 
+(48, 'Succes', 'Badge', 'null', 0, 'null'),  
+(49, 'Succes', 'Badge', 'null', 0, 'null'),  
+(50, 'Succes', 'Badge', 'null', 0, 'null'), 
+(51, 'Succes', 'Badge', 'null', 0, 'null'),  
+(52, 'Succes', 'Badge', 'null', 0, 'null'),  
+(53, 'Succes', 'Badge', 'null', 0, 'null'),  
+(54, 'Succes', 'Badge', 'null', 0, 'null'),  
+(55, 'Succes', 'Badge', 'null', 0, 'null'),  
+(56, 'Succes', 'Badge', 'null', 0, 'null'),  
+(57, 'Succes', 'Badge', 'null', 0, 'null'),  
+(58, 'Succes', 'Badge', 'null', 0, 'null'),  
+(59, 'Succes', 'Badge', 'null', 0, 'null'),  
+(60, 'Succes', 'Badge', 'null', 0, 'null');
+
 -- --------------------------------------------------------
 
 --

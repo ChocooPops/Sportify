@@ -73,7 +73,7 @@ use \App\Config;
         </aside>
     </section>
 
-    <div class="modal" id="modal">
+    <div class="modal" id="modal"> 
         <div class="modal-inner">
             <h2>Confirmation d'achat</h2>
             <p>Voulez-vous acheter l'article <span id="itemToBuy"></span> ?</p>
@@ -87,9 +87,13 @@ use \App\Config;
         <div id="modalpdp-inner">
             <h2>Choisissez votre photo de profil:</h2>
             <?php
-            foreach($tabIcone as $icone){?>
+            foreach($tabIcone as $icone){
+                if($icone->getId() > 30){?>
+                    <img class="imgpdp" src="images/succes/1.png">
+                <?php }else { ?>
                 <img class="imgpdp" src="images/Icone<?php echo $icone->getId()?>.png">
-            <?php }?>    
+
+            <?php }}?>    
             <div>   
             <button id="submitpdp">Confirmer</button>
             <button id="closemodalpdp">Annuler</button>

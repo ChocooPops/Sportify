@@ -85,7 +85,7 @@ class ItemsDAO extends DAO{
         
         
     }
-    public function insertInventaire($idInvent,$idItem){
+    public function insertInventaire($idInvent, $idItem){
         $sqlInsert = "INSERT INTO `INVENTAIRE` (UTILISATEUR_ID, ITEM_ID) VALUES (:userId, :itemId)";
         $params = array("userId" => $idInvent,
         "itemId"=>$idItem);
