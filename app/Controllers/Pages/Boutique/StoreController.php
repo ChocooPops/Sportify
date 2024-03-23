@@ -6,10 +6,10 @@ class StoreController implements DefautBoutiqueStrategy{
     public function index() {
 
         (new VerifSession());
-        if(!(new utilisateurDAO())->getPdp($_SESSION['nom'])){
+        if(!(new UtilisateurDAO())->getPdp($_SESSION['nom'])){
             $pdp = "images/utilisateur.png";   
         }else{
-            $pdp= (new utilisateurDAO())->getPdp($_SESSION['nom']);
+            $pdp= (new UtilisateurDAO())->getPdp($_SESSION['nom']);
         }
         View::View('boutique',[
             "tabItems"=>(new ItemsDAO())->getAll(),
@@ -18,13 +18,13 @@ class StoreController implements DefautBoutiqueStrategy{
             "tabBadge"=>(new ItemsDAO())->getItemsByType($_SESSION['nom'], "Badge"),
             "userPdp"=>$pdp,
             "tabIcone"=>(new ItemsDAO())->getItemsByType($_SESSION['nom'], "Icone"),
-            "userBadge"=>(new utilisateurDAO())->getBadge($_SESSION['nom']),
+            "userBadge"=>(new UtilisateurDAO())->getBadge($_SESSION['nom']),
             "tabEcusson"=>(new ItemsDAO())->getItemsByType($_SESSION['nom'], "Ecusson"),
-            "userEcusson"=>(new utilisateurDAO())->getEcusson($_SESSION['nom']),
-            "pointsUser"=>(new utilisateurDAO())->getPointUser($_SESSION['nom']),
-            "userId"=>(new utilisateurDAO())->getUserId($_SESSION['nom']),
-            "userRank"=>(new utilisateurDAO())->getClassement($_SESSION['nom']),
-            "pronoWin"=>(new utilisateurDAO())->getPronoWin($_SESSION['nom']),
+            "userEcusson"=>(new UtilisateurDAO())->getEcusson($_SESSION['nom']),
+            "pointsUser"=>(new UtilisateurDAO())->getPointUser($_SESSION['nom']),
+            "userId"=>(new UtilisateurDAO())->getUserId($_SESSION['nom']),
+            "userRank"=>(new UtilisateurDAO())->getClassement($_SESSION['nom']),
+            "pronoWin"=>(new UtilisateurDAO())->getPronoWin($_SESSION['nom']),
         ]);
         
         
