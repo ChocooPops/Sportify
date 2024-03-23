@@ -2,7 +2,7 @@ function changeCurrentPost(nouvelleValeur) {
     console.log('Nouvelle valeur:', nouvelleValeur);
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost/app/Controllers/changeCurrentPost.php?valeur=" + nouvelleValeur, true);
+    xhr.open("GET", "http://54.162.237.63/app/Controllers/changeCurrentPost.php?valeur=" + nouvelleValeur, true);
     xhr.onreadystatechange = function() {
         console.log(this)
         if (xhr.readyState == 4) {

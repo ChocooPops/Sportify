@@ -10,7 +10,6 @@ fetch('/public/admin')
    let asidecat = document.getElementById("categorie");
    let divAdmin = document.createElement('button');
    divAdmin.innerHTML = "Admin";
-   asidecat.appendChild(divAdmin);
    divAdmin.addEventListener('click',function(){
     window.location.href='/public/administration';   
    })

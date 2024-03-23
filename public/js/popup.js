@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
+            
             for (let index = 0; index < data.length; index++) {
                 const section = document.createElement('section');
                 section.setAttribute("class", "prono_ev");

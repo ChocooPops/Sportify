@@ -8,6 +8,11 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     && docker-php-ext-install gd zip pdo pdo_mysql
 
+
+RUN apt-get install -y nodejs npm
+
+RUN npm install typescript --save-dev
+
 # Active le module rewrite pour Apache
 RUN a2enmod rewrite
 

@@ -20,13 +20,13 @@ class FormInscriptionController implements DefaultFormController{
                 echo "insert reussi !";
                 //Appel script js
                 echo "<script>
-                    window.location.replace('http://localhost/public/connexion');
+                    window.location.replace('http://54.162.237.63/public/connexion');
                 </script>";
  
             }else{
                 echo "insert echoué !";
                 echo "<script>
-                    window.location.replace('http://localhost/public/connexion');
+                    window.location.replace('http://54.162.237.63/public/connexion');
                 </script>";
             }
            
