@@ -43,4 +43,8 @@ class StrategyJeu
     {
         return $this->strategy->updateJeuUserSucces();
     }
+    public function getInfoSuccesRestant()
+    {
+        return $this->strategy->getInfoSuccesRestant();
+    }
 }

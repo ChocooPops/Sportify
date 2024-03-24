@@ -122,4 +122,13 @@ class JsonControllerJeu implements DefaultJeuController
             echo "Méthode non autorisée";
         }
     }
+
+    public function getInfoSuccesRestant()
+    {
+        $userPoint = new UtilisateurDAO();
+        $id = $userPoint->getUserId($_SESSION['nom']);
+        $data = $userPoint->getInfoSuccesRestant($id);
+        $tab = json_encode($data, true);
+        echo $tab;
+    }
 }

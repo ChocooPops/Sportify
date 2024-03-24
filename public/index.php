@@ -216,6 +216,12 @@ switch ($request) {
             "updateJeuUserSucces",
         ]);
         break;
+    case "/public/json-jeu-getInfoSuccesRestant":
+        $route->get("/public/json-jeu-getInfoSuccesRestant", [
+            new StrategyJeu(new JsonControllerJeu()),
+            "getInfoSuccesRestant",
+        ]);
+        break;
     case "/public/insert-prono":
         $route->post("/public/insert-prono", [
             new JsonStrategyProno(new PronoController()),

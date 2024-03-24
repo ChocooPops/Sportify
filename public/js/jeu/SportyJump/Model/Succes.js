@@ -272,3 +272,64 @@ function updateJeuUserSucces() {
             console.log(data);
         })
 }
+
+
+
+
+///MISE A JOUR DES SUCCES RESTANTS
+// => NB_LOSE, NB_KILL, NB_BEKILL, NB_PIECE, NB_JET
+
+
+const resteSucces = document.querySelectorAll("#resteSucces");
+
+function soustractionSucces(a, b) {
+    var rest = a - b;
+    console.log(a)
+    console.log(b)
+    if (rest < 0) {
+        return "0";
+    } else {
+        return rest;
+    }
+}
+
+function setResteInfoSucce(tab) {
+    var i = 0;
+    resteSucces.forEach(function (reste) {
+        switch (i) {
+            case 0: reste.innerHTML = "Perdre au moins 10 parties \n Reste: " + soustractionSucces(10, tab[0][0]);
+                break;
+            case 1: reste.innerHTML = "Perdre au moins 15 parties \n Reste: " + soustractionSucces(15, tab[0][0]);
+                break;
+            case 2: reste.innerHTML = "Perdre au moins 30 parties \n Reste: " + soustractionSucces(30, tab[0][0]);
+                break;
+            case 3: reste.innerHTML = "Tuer 40 monstres au total \n Reste: " + soustractionSucces(40, tab[0][1]);
+                break;
+            case 4: reste.innerHTML = "Mourir 5 fois par un monstre \n Reste: " + soustractionSucces(5, tab[0][2]);
+                break;
+            case 5: reste.innerHTML = "Mourir 15 fois par un monstre \n Reste: " + soustractionSucces(15, tab[0][2]);
+                break;
+            case 6: reste.innerHTML = "Obtenir 300 pièces \n Reste: " + soustractionSucces(300, tab[0][4]);
+                break;
+            case 7: reste.innerHTML = "Utiliser 20 JetPack au total \n Reste: " + soustractionSucces(20, tab[0][3]);
+                break;
+        }
+        i++;
+    })
+}
+
+fetch("/public/json-jeu-getInfoSuccesRestant")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erreur lors de la récupération des données');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        setResteInfoSucce(data)
+    })
+    .catch(error => {
+        console.error('Erreur lors de la récupération des données:', error);
+        return null;
+    });

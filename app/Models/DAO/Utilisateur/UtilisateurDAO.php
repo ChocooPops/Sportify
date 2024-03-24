@@ -291,6 +291,23 @@ class UtilisateurDAO extends DAO
         return $tab;
     }
 
+    public function getInfoSuccesRestant($id)
+    {
+        $tab = [];
+        $sql = "SELECT NB_LOSE, NB_KILL, NB_BEKILL, NB_JET, NB_PIECE FROM JEU_USER WHERE UTILISATEUR_ID = :id";
+        $succes = $this->queryAll($sql, array('id' => $id));
+        foreach ($succes as $succe) {
+            $infos = [];
+            $infos[] = $succe[0];
+            $infos[] = $succe[1];
+            $infos[] = $succe[2];
+            $infos[] = $succe[3];
+            $infos[] = $succe[4];
+            $tab[] = $infos;
+        }
+        return $tab;
+    }
+
     public function UpdateSucces($id, $numSucces)
     {
 
