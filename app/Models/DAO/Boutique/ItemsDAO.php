@@ -45,9 +45,9 @@ class ItemsDAO extends DAO
         return $tab;
     }
 
-    public function getItemsNotOwned($pseudo)   //PRIX NOT LIKE 0; 
+    public function getItemsNotOwned($pseudo)
     {
-        $sql = "SELECT * FROM `ITEMS` WHERE ITEM_ID NOT IN (SELECT ITEM_ID FROM INVENTAIRE WHERE UTILISATEUR_ID = (SELECT UTILISATEUR_ID FROM UTILISATEUR WHERE PSEUDO = :pseudo))";
+        $sql = "SELECT * FROM `ITEMS` WHERE PRIX NOT LIKE 0 AND ITEM_ID NOT IN (SELECT ITEM_ID FROM INVENTAIRE WHERE UTILISATEUR_ID = (SELECT UTILISATEUR_ID FROM UTILISATEUR WHERE PSEUDO = :pseudo))";
         $params = array(":pseudo" => $pseudo);
         $sth = $this->queryAll($sql, $params);
 

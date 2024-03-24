@@ -293,10 +293,19 @@ class UtilisateurDAO extends DAO
 
     public function UpdateSucces($id, $numSucces)
     {
+
         $sql = "UPDATE `SUCCES` SET SUCCES_OBTENU = 'TRUE' WHERE UTILISATEUR_ID = :user AND SUCCES_NAME = :numSucces";
         $this->update($sql, array(
             "user" => $id,
             "numSucces" => $numSucces,
+        ));
+
+        $idSucces = $numSucces + 30;
+        $sql2 = "INSERT INTO `INVENTAIRE`(`UTILISATEUR_ID`, `ITEM_ID`) VALUES (:idUser, :idSucces)";
+
+        $this->insert($sql2, array(
+            "idUser" => $id,
+            "idSucces" => $idSucces
         ));
     }
 

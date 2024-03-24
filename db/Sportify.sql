@@ -29,6 +29,7 @@ CREATE DEFINER=`root`@`%` PROCEDURE `UPDATE_SUCCES` (IN `id_user` INT, IN `num_s
     UPDATE SUCCES 
     SET SUCCES_OBTENU = 'TRUE'
     WHERE UTILISATEUR_ID = id_user AND SUCCES_NAME = num_succes;
+    INSERT INTO INVENTAIRE (UTILISATEUR_ID, ITEM_ID) VALUES (id_user, num_succes + 30); 
 END$$
 
 DELIMITER ;
@@ -443,13 +444,13 @@ DELIMITER ;
 --
 
 INSERT INTO `UTILISATEUR` (`UTILISATEUR_ID`, `PSEUDO`, `EMAIL`, `MOT_DE_PASSE`, `POINT_ACTUEL`, `POINT_CLASSEMENT`, `STATUS`, `SCORE_JEU`, `SCORE_CLASSEMENT`, `LAST_CONNECTION`, `PDP_SRC`, `BADGE_SRC`, `ECUSSON_SRC`) VALUES
-(1, 'admin', 'admin@admin.fr', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 780.00, 10000, 0, 0, 0, '2024-01-02', 'http://localhost/public/images/Icone1.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(2, 'Rameray', 'Rameray@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, 0, NULL, 'http://localhost/public/images/Icone2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(3, 'Keap', 'Keap@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, 0, NULL, 'http://localhost/public/images/Icone3.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(4, 'RafikLaTrikDu69', 'RafikLaTrikDu69@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, 0, NULL, 'http://localhost/public/images/Icone4.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(10, 'ChocoPops', 'rahmaninahil@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 1123.00, 500, 1, 0, 427600, NULL, 'http://localhost/public/images/Icone5.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(11, 'Lufty', 'lufty@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 987.00, 670, 1, 0, 294000, NULL, 'http://localhost/public/images/Icone6.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(12, 'Lyollzz', 'leo@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 843.00, 900, 1, 0, 134820, NULL, 'http://localhost/public/images/Icone7.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
+(1, 'admin', 'admin@admin.fr', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 780.00, 10000, 0, 0, 0, '2024-01-02', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
+(2, 'Rameray', 'Rameray@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, 0, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
+(3, 'Keap', 'Keap@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, 0, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
+(4, 'RafikLaTrikDu69', 'RafikLaTrikDu69@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, 0, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
+(10, 'ChocoPops', 'rahmaninahil@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 1123.00, 500, 1, 0, 427600, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
+(11, 'Lufty', 'lufty@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 987.00, 670, 1, 0, 294000, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
+(12, 'Lyollzz', 'leo@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 843.00, 900, 1, 0, 134820, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
 (13, 'LoîsKassis', 'lois@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 620.00, 300, 1, 0, 102027, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
 (14, 'Pelilikian', 'pelikan@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 340.00, 456, 1, 0, 95760, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
 (15, 'Mass$$', 'mass@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 170.00, 890, 1, 0, 77490, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),

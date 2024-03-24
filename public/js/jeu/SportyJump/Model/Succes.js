@@ -245,18 +245,18 @@ function updateJeuUserSucces() {
             break;
     }
     var dataToSend = {
-        lose: 1 + 155000000,
-        kill: nbTueMonstreSucces + 155000000,
-        bekill: isbekill + 155000000,
-        score: score + 155000000,
-        jet: nbJetPackSucces + 155000000,
-        piece: nbPiece + 155000000,
-        foot: tab[0] + 155000000,
-        basket: tab[1] + 155000000,
-        tennis: tab[2] + 155000000,
-        baseball: tab[3] + 155000000,
-        rugby: tab[4] + 155000000,
-        bowling: tab[5] + 155000000
+        lose: 1,
+        kill: nbTueMonstreSucces,
+        bekill: isbekill,
+        score: score,
+        jet: nbJetPackSucces,
+        piece: nbPiece,
+        foot: tab[0],
+        basket: tab[1],
+        tennis: tab[2],
+        baseball: tab[3],
+        rugby: tab[4],
+        bowling: tab[5]
     };
 
     fetch("/public/json-jeu-UpdateJeuUser", {
