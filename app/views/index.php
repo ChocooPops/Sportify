@@ -1,5 +1,3 @@
-
-
 <head>
     <link rel="stylesheet" href="css/accueil_style.css">
     <script src="js/accueil.js" defer></script>
@@ -15,7 +13,7 @@
             <a>Sportify</a>
         </div>
         <div class="gridProfil">
-            <a>Devenez un Sportifyer  <b>|</b> </a>
+            <a>Devenez un Sportifyer <b>|</b> </a>
             <div class="profil" id="btProfil">
                 <img id="imageProfil" src="images/profil.png">
                 <a id="titreProfil">Profil</a>
@@ -28,21 +26,21 @@
         <div id="menu" class="menu">
             <a id="menu1"> S'inscrire </a>
             <a id="menu2">Se Connecter </a>
-            <?php 
-                    if (isset($_SESSION['nom'])) {
-                        echo '<script>
+            <?php
+            if (isset($_SESSION['nom'])) {
+                echo '<script>
                                     document.getElementById("menu2").addEventListener("click", function() {
                                         window.location.href = "/public/actu";
                                     });
                             </script>';
-                    }else{
-                        echo '<script>
+            } else {
+                echo '<script>
                                     document.getElementById("menu2").addEventListener("click", function() {
                                         window.location.href = "/public/connexion";
                                     });
-                        </script>'; 
-                    }
-                ?>
+                        </script>';
+            }
+            ?>
         </div>
     </div>
     <div class="barreTmp"></div>
@@ -66,20 +64,20 @@
                 <a>Vous êtes déja un sportifyer</a>
                 </br>
                 <p class="cadre" id="btConnecter">Se connecter</p>
-                <?php 
-                    if (isset($_SESSION['nom'])) {
-                        echo '<script>
+                <?php
+                if (isset($_SESSION['nom'])) {
+                    echo '<script>
                                     document.getElementById("btConnecter").addEventListener("click", function() {
                                         window.location.href = "/public/actu";
                                     });
                             </script>';
-                    }else{
-                        echo '<script>
+                } else {
+                    echo '<script>
                                     document.getElementById("btConnecter").addEventListener("click", function() {
                                         window.location.href = "/public/connexion";
                                     });
-                        </script>'; 
-                    }
+                        </script>';
+                }
                 ?>
             </div>
         </div>
@@ -102,23 +100,23 @@
     </div>
     <div class="ligne2"></div>
     <div class="cadreDescriptif">
-    <div class="bloc2">
+        <div class="bloc2">
             <div class="blocGauche2">
                 <a>Devenez attentif et ne manquez aucun moment fort grâce à notre file d’actualités mis à jour quotidiennement.</a>
                 <a>Participez vous-même à la vie sportive. Partager, liker et commenter de nouvelles actualités.</a>
                 <a>Ne ratez plus un seul coup de sifflet. Du suspense, des rebondissements, des records battus. Vibrez au rythme des événements du monde du sport.</a>
             </div>
             <div class="blocDroite2">
-                <a> Restez branché aux </br> actualités sportives  </a> </br>
+                <a> Restez branché aux </br> actualités sportives </a> </br>
                 <div class="iconeBloc"></div>
             </div>
         </div>
     </div>
     <div class="ligne2"></div>
     <div class="cadreDescriptif">
-    <div class="bloc">
+        <div class="bloc">
             <div class="blocGauche">
-                <a> Jouez à notre </br> Mini-Jeu  </a> </br>
+                <a> Jouez à notre </br> Mini-Jeu </a> </br>
                 <div class="iconeBloc"></div>
             </div>
             <div class="blocDroite">
@@ -130,7 +128,7 @@
     </div>
     <div class="ligne2"></div>
     <div class="cadreDescriptif">
-    <div class="bloc2">
+        <div class="bloc2">
             <div class="blocGauche2">
                 <a>Transformez votre expérience en ligne avec des achats personnalisés dans notre boutique exclusive. </a>
                 <a>Exprimez votre style unique en personnalisant votre compte avec nos articles tendances. Votre style, vos règles.</a>
@@ -152,7 +150,7 @@
             <a>Site réalisé dans le cadre de la SAE S3</a>
         </footer>
         <div class="cadrageFleche">
-            <img id ="flecheFin" src="images/fleche.png">
+            <img id="flecheFin" src="images/fleche.png">
         </div>
         <div class="finDroite">
             <a> Sportify </a>
