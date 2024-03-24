@@ -16,7 +16,7 @@ use \App\Config;
 
     <section id="corps">
         <aside id="categorie">
-            <form>
+          
                 <fieldset>
                     <legend>Filtres</legend>
                     <legend>Types d'item</legend>
@@ -42,9 +42,11 @@ use \App\Config;
                     <input type="radio" name="dispo" value="possédé" class="dispo">Possédé<br>
                     <input type="radio" name="dispo" value="pas possédé" class="dispo">Non possédé<br>
                         -->
-                </fieldset>
+                        <button id="reboot">Reinitialiser</button>
+                    </fieldset>
+               
                 <script src="../../public/js/prix.js"></script>
-            </form>
+        
         </aside>
 
         <section id="articles">

@@ -126,8 +126,13 @@ main{
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
-
-.photo { grid-area: 1 / 1 / 2 / 2; }
+.photo {
+  display: flex;
+  align-items: center; 
+}
+.photo img {
+  margin-right: 5px; /
+}
 #like{
   max-width: 20%;
   height: auto;
@@ -554,19 +559,19 @@ margin-bottom: 5%;
   position: absolute;
   width: 60%;
   height: 10px;
-  right: -8px;
+  right: 38px;
   background-color: #fff;
 }
 
 .arrow::after {
   top: -12px;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 
 .arrow::before {
   top: 12px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 
  /* aside droit/profil */

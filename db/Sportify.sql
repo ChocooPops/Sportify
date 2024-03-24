@@ -407,9 +407,9 @@ CREATE TABLE `UTILISATEUR` (
   `SCORE_JEU` int DEFAULT '0',
   `SCORE_CLASSEMENT` int DEFAULT '0',
   `LAST_CONNECTION` date DEFAULT NULL,
-  `PDP_SRC` varchar(100) DEFAULT 'http://localhost/public/images/logo2.png',
-  `BADGE_SRC` varchar(100) DEFAULT 'http://localhost/public/images/logo2.png',
-  `ECUSSON_SRC` varchar(100) DEFAULT 'http://localhost/public/images/logo2.png'
+  `PDP_SRC` varchar(100) DEFAULT 'http://localhost/public/images/utilisateur.png',
+  `BADGE_SRC` varchar(100) DEFAULT 'http://localhost/public/images/badge.png',
+  `ECUSSON_SRC` varchar(100) DEFAULT 'http://localhost/public/images/bouclier.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -443,21 +443,35 @@ DELIMITER ;
 -- Déchargement des données de la table `UTILISATEUR`
 --
 
-INSERT INTO `UTILISATEUR` (`UTILISATEUR_ID`, `PSEUDO`, `EMAIL`, `MOT_DE_PASSE`, `POINT_ACTUEL`, `POINT_CLASSEMENT`, `STATUS`, `SCORE_JEU`, `SCORE_CLASSEMENT`, `LAST_CONNECTION`, `PDP_SRC`, `BADGE_SRC`, `ECUSSON_SRC`) VALUES
-(1, 'admin', 'admin@admin.fr', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 780.00, 10000, 0, 0, 0, '2024-01-02', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(2, 'Rameray', 'Rameray@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, 0, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(3, 'Keap', 'Keap@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, 0, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(4, 'RafikLaTrikDu69', 'RafikLaTrikDu69@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, 0, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(10, 'ChocoPops', 'rahmaninahil@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 1123.00, 500, 1, 0, 427600, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(11, 'Lufty', 'lufty@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 987.00, 670, 1, 0, 294000, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(12, 'Lyollzz', 'leo@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 843.00, 900, 1, 0, 134820, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(13, 'LoîsKassis', 'lois@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 620.00, 300, 1, 0, 102027, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(14, 'Pelilikian', 'pelikan@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 340.00, 456, 1, 0, 95760, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(15, 'Mass$$', 'mass@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 170.00, 890, 1, 0, 77490, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(16, 'Shuuss', 'shuus@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 80.00, 230, 1, 0, 16380, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(17, 'AbuTotem', 'Abu@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 50.00, 6000, 1, 0, 13440, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(18, 'Slovenisl', 'nils@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 35.00, 120, 1, 0, 10500, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png'),
-(19, 'Muhadinibishi', 'mumu@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 10.00, 1150, 1, 0, 2100, NULL, 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png', 'http://localhost/public/images/logo2.png');
+INSERT INTO `UTILISATEUR` (`UTILISATEUR_ID`, `PSEUDO`, `EMAIL`, `MOT_DE_PASSE`, `POINT_ACTUEL`, `POINT_CLASSEMENT`, `STATUS`, `SCORE_JEU`, `LAST_CONNECTION`) VALUES
+(1, 'admin', 'admin@admin.fr', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 780.00, 10000, 0, 0, '2024-01-02'),
+(2, 'Rameray', 'Rameray@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, NULL),
+(3, 'Keap', 'Keap@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, NULL),
+(4, 'RafikLaTrikDu69', 'RafikLaTrikDu69@example.com', '$2y$10$Oz1T4KvH6JaDhLg/iKWu5eVt/eEgH17srKnvYPhsJ9vU3z6AjpoFi', 100.00, 0, 1, 0, NULL);
+
+
+-- REMPLISSAGE DE DONNEE POUR LE CLASSEMENT DU JEU; 
+INSERT INTO `UTILISATEUR` (`UTILISATEUR_ID`, `PSEUDO`, `EMAIL`, `MOT_DE_PASSE`,`POINT_ACTUEL`, `POINT_CLASSEMENT`, `STATUS`, `SCORE_JEU`, `SCORE_CLASSEMENT`, `LAST_CONNECTION`) VALUES
+(10, 'ChocoPops', 'rahmaninahil@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 1123.00, 500, 1, 0, 427600, null), 
+(11, 'Lufty', 'lufty@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 987.00, 670, 1, 0, 294000, null), 
+(12, 'Lyollzz', 'leo@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 843.00, 900, 1, 0, 134820, null),
+(13, 'LoîsKassis', 'lois@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 620.00, 300, 1, 0, 102027, null), 
+(14, 'Pelilikian', 'pelikan@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 340.00, 456, 1, 0, 95760, null), 
+(15, 'Mass$$', 'mass@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 170.00, 890, 1, 0, 77490, null), 
+(16, 'Shuuss', 'shuus@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 80.00, 230, 1, 0, 16380, null), 
+(17, 'AbuTotem', 'Abu@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 50.00, 6000, 1, 0, 13440, null), 
+(18, 'Slovenisl', 'nils@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 35.00, 120, 1, 0, 10500, null), 
+(19, 'Muhadinibishi', 'mumu@gmail.com', '$2y$10$odqFW26H02RlEP/0Ba7zJOak3zwEW2JPQm49jeFJGz9Wdz09ZQVtq', 10.00, 1150, 1, 0, 2100, null); 
+
+-- changer la photo de profil de quelque utilisateur
+-- UPDATE `UTILISATEUR` SET `PDP_SRC` = 'http://localhost/public/images/Icone1.png' WHERE `UTILISATEUR`.`UTILISATEUR_ID` = 1;
+-- UPDATE `UTILISATEUR` SET `PDP_SRC` = 'http://localhost/public/images/Icone2.png' WHERE `UTILISATEUR`.`UTILISATEUR_ID` = 2;
+-- UPDATE `UTILISATEUR` SET `PDP_SRC` = 'http://localhost/public/images/Icone3.png' WHERE `UTILISATEUR`.`UTILISATEUR_ID` = 3;
+-- UPDATE `UTILISATEUR` SET `PDP_SRC` = 'http://localhost/public/images/Icone4.png' WHERE `UTILISATEUR`.`UTILISATEUR_ID` = 4;
+-- UPDATE `UTILISATEUR` SET `PDP_SRC` = 'http://localhost/public/images/Icone5.png' WHERE `UTILISATEUR`.`UTILISATEUR_ID` = 10;
+-- UPDATE `UTILISATEUR` SET `PDP_SRC` = 'http://localhost/public/images/Icone6.png' WHERE `UTILISATEUR`.`UTILISATEUR_ID` = 11;
+-- UPDATE `UTILISATEUR` SET `PDP_SRC` = 'http://localhost/public/images/Icone7.png' WHERE `UTILISATEUR`.`UTILISATEUR_ID` = 12;
+
 
 --
 -- Index pour les tables déchargées
