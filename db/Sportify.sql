@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : mysql_db
--- Généré le : sam. 17 fév. 2024 à 23:46
+-- Généré le : dim. 24 mars 2024 à 13:52
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.14
 
@@ -140,39 +140,59 @@ INSERT INTO `ITEMS` (`ITEM_ID`, `NOM_ITEM`, `TYPE`, `DESCRIPTION`, `PRIX`, `COUL
 (24, 'Terrain Foot', 'Badge', 'Terrain de Fottball', 275, 'Vert'),
 (25, 'Coupe', 'Badge', 'Coupe vainqueur', 250, 'Jaune'),
 (26, 'Real Madrid', 'Ecusson', '14 UCL Winners', 500, 'Blanc'),
-(27, 'Barcelone', 'Ecusson', 'Nothing Winners', 500, 'Bleu');
-
-INSERT INTO `ITEMS` (`ITEM_ID`, `NOM_ITEM`, `TYPE`, `DESCRIPTION`, `PRIX`, `COULEUR`) VALUES
-(31, 'Succes', 'Badge', 'null', 0, 'null'),  
-(32, 'Succes', 'Badge', 'null', 0, 'null'),  
-(33, 'Succes', 'Badge', 'null', 0, 'null'),  
-(34, 'Succes', 'Badge', 'null', 0, 'null'),  
-(35, 'Succes', 'Badge', 'null', 0, 'null'),  
-(36, 'Succes', 'Badge', 'null', 0, 'null'),  
-(37, 'Succes', 'Badge', 'null', 0, 'null'),  
-(38, 'Succes', 'Badge', 'null', 0, 'null'),  
-(39, 'Succes', 'Badge', 'null', 0, 'null'),  
-(40, 'Succes', 'Badge', 'null', 0, 'null'),  
-(41, 'Succes', 'Badge', 'null', 0, 'null'),  
-(42, 'Succes', 'Badge', 'null', 0, 'null'),  
-(43, 'Succes', 'Badge', 'null', 0, 'null'),    
-(44, 'Succes', 'Badge', 'null', 0, 'null'),  
-(45, 'Succes', 'Badge', 'null', 0, 'null'),  
-(46, 'Succes', 'Badge', 'null', 0, 'null'),  
-(47, 'Succes', 'Badge', 'null', 0, 'null'), 
-(48, 'Succes', 'Badge', 'null', 0, 'null'),  
-(49, 'Succes', 'Badge', 'null', 0, 'null'),  
-(50, 'Succes', 'Badge', 'null', 0, 'null'), 
-(51, 'Succes', 'Badge', 'null', 0, 'null'),  
-(52, 'Succes', 'Badge', 'null', 0, 'null'),  
-(53, 'Succes', 'Badge', 'null', 0, 'null'),  
-(54, 'Succes', 'Badge', 'null', 0, 'null'),  
-(55, 'Succes', 'Badge', 'null', 0, 'null'),  
-(56, 'Succes', 'Badge', 'null', 0, 'null'),  
-(57, 'Succes', 'Badge', 'null', 0, 'null'),  
-(58, 'Succes', 'Badge', 'null', 0, 'null'),  
-(59, 'Succes', 'Badge', 'null', 0, 'null'),  
+(27, 'Barcelone', 'Ecusson', 'Nothing Winners', 500, 'Bleu'),
+(31, 'Succes', 'Badge', 'null', 0, 'null'),
+(32, 'Succes', 'Badge', 'null', 0, 'null'),
+(33, 'Succes', 'Badge', 'null', 0, 'null'),
+(34, 'Succes', 'Badge', 'null', 0, 'null'),
+(35, 'Succes', 'Badge', 'null', 0, 'null'),
+(36, 'Succes', 'Badge', 'null', 0, 'null'),
+(37, 'Succes', 'Badge', 'null', 0, 'null'),
+(38, 'Succes', 'Badge', 'null', 0, 'null'),
+(39, 'Succes', 'Badge', 'null', 0, 'null'),
+(40, 'Succes', 'Badge', 'null', 0, 'null'),
+(41, 'Succes', 'Badge', 'null', 0, 'null'),
+(42, 'Succes', 'Badge', 'null', 0, 'null'),
+(43, 'Succes', 'Badge', 'null', 0, 'null'),
+(44, 'Succes', 'Badge', 'null', 0, 'null'),
+(45, 'Succes', 'Badge', 'null', 0, 'null'),
+(46, 'Succes', 'Badge', 'null', 0, 'null'),
+(47, 'Succes', 'Badge', 'null', 0, 'null'),
+(48, 'Succes', 'Badge', 'null', 0, 'null'),
+(49, 'Succes', 'Badge', 'null', 0, 'null'),
+(50, 'Succes', 'Badge', 'null', 0, 'null'),
+(51, 'Succes', 'Badge', 'null', 0, 'null'),
+(52, 'Succes', 'Badge', 'null', 0, 'null'),
+(53, 'Succes', 'Badge', 'null', 0, 'null'),
+(54, 'Succes', 'Badge', 'null', 0, 'null'),
+(55, 'Succes', 'Badge', 'null', 0, 'null'),
+(56, 'Succes', 'Badge', 'null', 0, 'null'),
+(57, 'Succes', 'Badge', 'null', 0, 'null'),
+(58, 'Succes', 'Badge', 'null', 0, 'null'),
+(59, 'Succes', 'Badge', 'null', 0, 'null'),
 (60, 'Succes', 'Badge', 'null', 0, 'null');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `JEU_USER`
+--
+
+CREATE TABLE `JEU_USER` (
+  `UTILISATEUR_ID` int NOT NULL,
+  `NB_LOSE` int DEFAULT '0',
+  `NB_kILL` int DEFAULT '0',
+  `NB_BEKILL` int DEFAULT '0',
+  `SCORE_CLASSEMENT` int DEFAULT '0',
+  `NB_JET` int DEFAULT '0',
+  `NB_PIECE` int DEFAULT '0',
+  `NB_PARTIE_FOOT` int DEFAULT '0',
+  `NB_PARTIE_BASKET` int DEFAULT '0',
+  `NB_PARTIE_TENNIS` int DEFAULT '0',
+  `NB_PARTIE_BASEBALL` int DEFAULT '0',
+  `NB_PARTIE_RUGBY` int DEFAULT '0',
+  `NB_PARTIE_BOWLING` int DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -263,7 +283,7 @@ CREATE TABLE `SUCCES` (
   `UTILISATEUR_ID` int NOT NULL,
   `SUCCES_NAME` int NOT NULL,
   `SUCCES_OBTENU` varchar(5) DEFAULT 'FALSE'
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -309,6 +329,7 @@ CREATE TRIGGER `trig_add_succes` AFTER INSERT ON `UTILISATEUR` FOR EACH ROW BEGI
         INSERT INTO SUCCES (SUCCES_ID, UTILISATEUR_ID, SUCCES_NAME) VALUES (id_max+x, NEW.UTILISATEUR_ID, x);
         SET x = x + 1;
     END WHILE;
+    INSERT INTO JEU_USER (UTILISATEUR_ID) VALUES (NEW.UTILISATEUR_ID); 
 END
 $$
 DELIMITER ;
@@ -368,6 +389,12 @@ ALTER TABLE `INVENTAIRE`
 --
 ALTER TABLE `ITEMS`
   ADD PRIMARY KEY (`ITEM_ID`);
+
+--
+-- Index pour la table `JEU_USER`
+--
+ALTER TABLE `JEU_USER`
+  ADD KEY `FK_JEU_USER` (`UTILISATEUR_ID`);
 
 --
 -- Index pour la table `LIKES`
@@ -437,7 +464,7 @@ ALTER TABLE `INVENTAIRE`
 -- AUTO_INCREMENT pour la table `ITEMS`
 --
 ALTER TABLE `ITEMS`
-  MODIFY `ITEM_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `ITEM_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT pour la table `POST`
@@ -468,6 +495,12 @@ ALTER TABLE `INVENTAIRE`
   ADD CONSTRAINT `FK_ITEM_ID` FOREIGN KEY (`ITEM_ID`) REFERENCES `ITEMS` (`ITEM_ID`),
   ADD CONSTRAINT `FK_USER_ID_INVENTAIRE` FOREIGN KEY (`UTILISATEUR_ID`) REFERENCES `UTILISATEUR` (`UTILISATEUR_ID`),
   ADD CONSTRAINT `FK_UTILISATEUR_ID` FOREIGN KEY (`UTILISATEUR_ID`) REFERENCES `UTILISATEUR` (`UTILISATEUR_ID`);
+
+--
+-- Contraintes pour la table `JEU_USER`
+--
+ALTER TABLE `JEU_USER`
+  ADD CONSTRAINT `FK_JEU_USER` FOREIGN KEY (`UTILISATEUR_ID`) REFERENCES `UTILISATEUR` (`UTILISATEUR_ID`);
 
 --
 -- Contraintes pour la table `LIKES`
