@@ -31,12 +31,12 @@ switch ($request) {
             "updatePdp",
         ]);
         break;
-        case '/public/json-badge':
-            $route->post('/public/json-badge', [new JsonControllerBadge(), 'updateBadge']);
-            break;
-        case '/public/json-ecu':
-            $route->post('/public/json-ecu', [new JsonControllerEcusson(), 'updateEcusson']);
-            break;
+    case '/public/json-badge':
+        $route->post('/public/json-badge', [new JsonControllerBadge(), 'updateBadge']);
+        break;
+    case '/public/json-ecu':
+        $route->post('/public/json-ecu', [new JsonControllerEcusson(), 'updateEcusson']);
+        break;
 
     case "/public/json-actu":
         if (
@@ -118,7 +118,7 @@ switch ($request) {
         $route->post("/public/insert-cat", [
             new AdministrationController(),
             "insertCat",
-            ]);
+        ]);
         break;
     case "/public/actu/like":
         $route->get("/public/actu/like", [
@@ -199,17 +199,23 @@ switch ($request) {
         ]);
         break;
     case "/public/json-jeu-getAffichageSucces":
-            $route->get("/public/json-jeu-getAffichageSucces", [
-                new StrategyJeu(new JsonControllerJeu()),
-                "affichageSucces",
-            ]);
-            break;
+        $route->get("/public/json-jeu-getAffichageSucces", [
+            new StrategyJeu(new JsonControllerJeu()),
+            "affichageSucces",
+        ]);
+        break;
     case "/public/json-jeu-UpdateSucces":
         $route->post("/public/json-jeu-UpdateSucces", [
             new StrategyJeu(new JsonControllerJeu()),
             "updateSucces",
         ]);
-       break;
+        break;
+    case "/public/json-jeu-UpdateJeuUser":
+        $route->post("/public/json-jeu-UpdateJeuUser", [
+            new StrategyJeu(new JsonControllerJeu()),
+            "updateJeuUserSucces",
+        ]);
+        break;
     case "/public/insert-prono":
         $route->post("/public/insert-prono", [
             new JsonStrategyProno(new PronoController()),
@@ -228,4 +234,3 @@ switch ($request) {
 }
 
 $route->resolve($_SERVER["REQUEST_URI"], $_SERVER["REQUEST_METHOD"]);
-?>

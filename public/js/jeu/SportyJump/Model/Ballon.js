@@ -253,6 +253,7 @@ function GameOver() {
         window.location.href = "GameOver.html?entier=" + encodeURIComponent(getType());
         //console.log("nombre de plateforme touchée : " + nbPlateformeTouch);
         //console.log("nombre de monstre éliminé : " + nbMonstreTouch);
+        updateJeuUserSucces();          //SUCCES; 
     }
 }
 

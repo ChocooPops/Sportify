@@ -138,18 +138,15 @@ function updateSuccesById(id) {
         })
 }
 
+
 var nbSautSucces = 0;
 
 var nbTueMonstreSucces = 0;
 var ballonTuerParMonstre = false;
 
-var Score_20_000_sans_piece = false;
-var Score_60_000_sans_piece = false;
-
 var nbJetPackSucces = 0;
 var nbRessortSucces = 0;
 
-var Score_50000_sansPiece_sansMonstre = false;
 var nbTeleportationSucces = 0;
 
 function setSuccesJump() {
@@ -224,4 +221,54 @@ function setNbTeleportationSucces() {
     if (nbTeleportationSucces >= 20) {      //20
         updateSuccesById(27);
     }
+}
+
+function updateJeuUserSucces() {
+
+    var isbekill = 0;
+    if (ballonTuerParMonstre) {
+        isbekill = 1;
+    }
+    var tab = [0, 0, 0, 0, 0, 0];
+    switch (type) {
+        case 2: tab[1] = 1;
+            break;
+        case 3: tab[2] = 1;
+            break;
+        case 4: tab[3] = 1;
+            break;
+        case 5: tab[4] = 1;
+            break;
+        case 6: tab[5] = 1;
+            break;
+        default: tab[0] = 1;
+            break;
+    }
+    var dataToSend = {
+        lose: 1 + 155000000,
+        kill: nbTueMonstreSucces + 155000000,
+        bekill: isbekill + 155000000,
+        score: score + 155000000,
+        jet: nbJetPackSucces + 155000000,
+        piece: nbPiece + 155000000,
+        foot: tab[0] + 155000000,
+        basket: tab[1] + 155000000,
+        tennis: tab[2] + 155000000,
+        baseball: tab[3] + 155000000,
+        rugby: tab[4] + 155000000,
+        bowling: tab[5] + 155000000
+    };
+
+    fetch("/public/json-jeu-UpdateJeuUser", {
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+
+        "body": JSON.stringify(dataToSend)
+    })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+        })
 }

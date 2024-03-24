@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : mysql_db
--- Généré le : dim. 24 mars 2024 à 13:52
+-- Généré le : dim. 24 mars 2024 à 14:38
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.14
 
@@ -20,6 +20,18 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `Sportify`
 --
+
+DELIMITER $$
+--
+-- Procédures
+--
+CREATE DEFINER=`root`@`%` PROCEDURE `UPDATE_SUCCES` (IN `id_user` INT, IN `num_succes` INT)   BEGIN
+    UPDATE SUCCES 
+    SET SUCCES_OBTENU = 'TRUE'
+    WHERE UTILISATEUR_ID = id_user AND SUCCES_NAME = num_succes;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -193,6 +205,98 @@ CREATE TABLE `JEU_USER` (
   `NB_PARTIE_RUGBY` int DEFAULT '0',
   `NB_PARTIE_BOWLING` int DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déclencheurs `JEU_USER`
+--
+DELIMITER $$
+CREATE TRIGGER `trig_update_succes` AFTER UPDATE ON `JEU_USER` FOR EACH ROW BEGIN
+    -- Variable pour le meilleur score
+    DECLARE maxScore INT DEFAULT 0;
+    -- Variable pour le 10e meilleur score
+    DECLARE DIXESCORE INT DEFAULT 0;  
+    -- Variable pour le nombre de succès obtenus
+    DECLARE nbSucces INT DEFAULT 0;
+
+    -- SUCCES SUR LE NOMBRE DE PARTIE PERDU;
+    IF NEW.NB_LOSE != OLD.NB_LOSE THEN
+        IF NEW.NB_LOSE >= 10 THEN 
+            CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 1);
+        END IF;
+        IF NEW.NB_LOSE >= 15 THEN
+            CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 2);
+        END IF;
+        IF NEW.NB_LOSE >= 30 THEN
+            CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 3);
+        END IF;
+    END IF;
+
+    -- SUCCES SUR LE NOMBRE DE MONSTRES TUES;
+    IF NEW.NB_KILL != OLD.NB_KILL THEN
+        IF NEW.NB_KILL >= 40 THEN
+            CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 8);
+        END IF;
+    END IF;
+
+    -- SUCCES SUR DE MORT;
+    IF NEW.NB_BEKILL != OLD.NB_BEKILL THEN
+        IF NEW.NB_BEKILL >= 5 THEN
+            CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 9);
+        END IF; 
+        IF NEW.NB_BEKILL >= 15 THEN
+            CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 10);
+        END IF;
+    END IF;
+
+    -- SUCCES SUR LE MEILLEUR SCORE;
+    IF NEW.SCORE_CLASSEMENT != OLD.SCORE_CLASSEMENT THEN
+        SELECT MAX(SCORE_CLASSEMENT) INTO maxScore FROM UTILISATEUR;
+        IF NEW.SCORE_CLASSEMENT = maxScore THEN
+            CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 13);
+        END IF;
+
+        -- SUCCES SUR LE TOP 10;
+        SELECT SCORE_CLASSEMENT INTO DIXESCORE FROM 
+            (SELECT SCORE_CLASSEMENT FROM UTILISATEUR ORDER BY SCORE_CLASSEMENT DESC LIMIT 9, 1) AS temp;
+        IF NEW.SCORE_CLASSEMENT >= DIXESCORE THEN
+            CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 29);
+        END IF;
+    END IF;
+
+    -- SUCCES SUR LE NOMBRE DE PIECE OBTENU;
+    IF NEW.NB_PIECE != OLD.NB_PIECE THEN
+        IF NEW.NB_PIECE >= 300 THEN
+            CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 18);
+        END IF;
+    END IF;
+
+    -- SUCCES SUR LE NOMBRE DE JET OBTENU;
+    IF NEW.NB_JET != OLD.NB_JET THEN
+        IF NEW.NB_JET >= 20 THEN
+            CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 20);
+        END IF;
+    END IF;
+    
+    IF NEW.NB_PARTIE_FOOT >= 1 AND NEW.NB_PARTIE_BASKET >= 1 AND
+       NEW.NB_PARTIE_TENNIS >= 1 AND NEW.NB_PARTIE_BASEBALL >= 1 AND
+       NEW.NB_PARTIE_RUGBY >= 1 AND NEW.NB_PARTIE_BOWLING >= 1 THEN
+        CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 22);
+    END IF;
+    
+    IF NEW.NB_PARTIE_FOOT >= 15 OR NEW.NB_PARTIE_BASKET >= 15 OR
+       NEW.NB_PARTIE_TENNIS >= 15 OR NEW.NB_PARTIE_BASEBALL >= 15 OR
+       NEW.NB_PARTIE_RUGBY >= 15 OR NEW.NB_PARTIE_BOWLING >= 15 THEN
+        CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 23);
+    END IF;
+    
+    -- SUCCES SUR L'OBTENTION DE TOUS LES SUCCES;
+    SELECT COUNT(SUCCES_ID) INTO nbSucces FROM SUCCES WHERE UTILISATEUR_ID = NEW.UTILISATEUR_ID AND SUCCES_OBTENU = 'TRUE';
+    IF nbSucces = 29 THEN
+        CALL UPDATE_SUCCES(NEW.UTILISATEUR_ID, 30);
+    END IF;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
