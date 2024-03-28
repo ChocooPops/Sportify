@@ -16,7 +16,7 @@ Navigateur web
 
 ## Accès au site
 
-Lien du site : [Sportify](--a faire--)
+Lien du site : [Sportify](http://ec2-54-162-237-63.compute-1.amazonaws.com/public/connexion)
 
 ## Auteurs
 
