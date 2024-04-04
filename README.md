@@ -14,9 +14,27 @@ Le site contient aussi une séction dédié a l'actualité sportive.
 
 Navigateur web
 
+docker-desktop
+
+## Lancement du projet 
+
+docker-compose up -d 
+
+Le site est accessible en tapant localhost dans le navigateur web de votre choix (de preference google chrome)
+
+vous pouvez remarquer que 3 sercices sont donc lancer la partie base de donnée et le site web
+
+vous n'avez rien a faire juste à lancer le projet. 
+
+
+## Stopper le projet 
+
+docker-compose down 
+
+
 ## Accès au site
 
-Lien du site : [Sportify](http://ec2-54-162-237-63.compute-1.amazonaws.com/public/connexion)
+Lien du site : [Sportify](http://ec2-52-90-201-153.compute-1.amazonaws.com)
 
 ## Auteurs
 
