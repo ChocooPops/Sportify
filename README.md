@@ -5,8 +5,8 @@
 ## Introduction
 
 Ce projet est une SAE libre. Le projet lui doit etre réalisé de A à Z.
-Il s'agit d'un site web de pronostique (pari sportif) sur les matchs de divers sport.
 
+Il s'agit d'un site web de pronostique (pari sportif) sur les matchs de divers sport.
 
 Le site contient aussi une séction dédié a l'actualité sportive.
 
@@ -18,21 +18,40 @@ docker-desktop
 
 ## Lancement du projet 
 
+Commencer par récuperer le projet : 
+```bash
+git clone https://forge.univ-lyon1.fr/p2200950/sportify.git
+```
+Suite à cela déplacer vous sur le dossier sportify/ si ce n'est pas déja fait avec : 
+
+```bash
+cd sportify/
+```
+Lancer la commande : 
+```bash
 docker-compose up -d 
+```
 
 Le site est accessible en tapant localhost dans le navigateur web de votre choix (de preference google chrome)
 
-vous pouvez remarquer que 3 sercices sont donc lancer la partie base de donnée et le site web
+Vous pouvez remarquer que 3 sercices sont donc lancer : 
+- La partie base de donnée 
+- Le site web
 
-vous n'avez rien a faire juste à lancer le projet. 
+Pour voir ces sercices faites : 
+```bash
+docker ps
+```
+
+Vous n'avez rien a faire juste à lancer le projet avec la commande et a profiter pleinement du site. 
 
 
-## Stopper le projet 
-
+Pour stopper le projet : 
+```bash 
 docker-compose down 
+```
 
-
-## Accès au site
+## Accès au site héberger
 
 Lien du site : [Sportify](http://ec2-52-90-201-153.compute-1.amazonaws.com)
 
